@@ -1,7 +1,8 @@
-import { Item, Rule } from "../types";
+import { BaseRule } from "@/base-rule";
+import { Item } from "../types";
 
-export class QualityRangeRule implements Rule {
-  constructor(private exceptions: string[]) {}
+export class QualityRangeRule extends BaseRule {
+  constructor(private exceptions: string[]) {super()}
 
   condition(item: Item) {
     return (

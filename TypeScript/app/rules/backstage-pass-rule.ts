@@ -1,7 +1,10 @@
-import { Item, Rule } from "../types";
+import { BaseRule } from "@/base-rule";
+import { Item } from "../types";
 
-export class BackstagePassRule implements Rule {
-  constructor(private names: string[]) {}
+export class BackstagePassRule extends BaseRule {
+  constructor(private names: string[]) {
+    super();
+  }
 
   condition(item: Item) {
     return this.names.includes(item.name);

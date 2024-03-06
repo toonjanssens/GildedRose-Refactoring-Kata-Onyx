@@ -1,9 +1,7 @@
 import rulesApplicator from "./rule-applicator";
 import { Item } from "./types";
 export class GildedRose {
-  items: Array<Item>;
-
-  constructor(items = [] as Array<Item>) {
+  constructor(private items:Array<Item> = []) {
     this.items = items;
   }
 

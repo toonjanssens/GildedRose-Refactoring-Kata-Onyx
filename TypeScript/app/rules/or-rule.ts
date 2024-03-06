@@ -1,10 +1,9 @@
+import { BaseRule } from "@/base-rule";
 import { Item, Rule } from "../types";
 
-export class OrRule implements Rule {
-  constructor(private rules: Rule[]) {}
-
-  condition() {
-    return true;
+export class OrRule extends BaseRule {
+  constructor(private rules: Rule[]) {
+    super()
   }
 
   action(item: Item) {
