@@ -1,4 +1,5 @@
-import { Item, GildedRose } from '@/gilded-rose';
+import { GildedRose } from '@/gilded-rose';
+import { Item } from '@/types';
 
 describe('Gilded Rose', () => {
   it('Should decrese the quality and sellIn by 1', () => {
@@ -20,23 +21,23 @@ describe('Gilded Rose', () => {
     expect(items[0].quality).toBe(0);
   });
 
-  it('"Aged Brie" actually increases in Quality the older it gets', () => {
-    const gildedRose = new GildedRose([new Item('Aged Brie', 10, 10)]);
-    const items = gildedRose.updateQuality();
-    expect(items[0].quality).toBe(11);
-  });
-
   it('The Quality of an item is never more than 50', () => {
     const gildedRose = new GildedRose([new Item('Aged Brie', 10, 50)]);
     const items = gildedRose.updateQuality();
     expect(items[0].quality).toBe(50);
   });
 
+  it('"Aged Brie" actually increases in Quality the older it gets', () => {
+    const gildedRose = new GildedRose([new Item('Aged Brie', 10, 10)]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toBe(11);
+  });
+
   it('"Sulfuras", being a legendary item, never has to be sold or decreases in Quality', () => {
-    const gildedRose = new GildedRose([new Item('Sulfuras, Hand of Ragnaros', 10, 10)]);
+    const gildedRose = new GildedRose([new Item('Sulfuras, Hand of Ragnaros', 10, 80)]);
     const items = gildedRose.updateQuality();
     expect(items[0].sellIn).toBe(10);
-    expect(items[0].quality).toBe(10);
+    expect(items[0].quality).toBe(80);
   });
 
   it('"Backstage passes", like aged brie, increases in Quality as its SellIn value approaches more then 10 days left', () => {
