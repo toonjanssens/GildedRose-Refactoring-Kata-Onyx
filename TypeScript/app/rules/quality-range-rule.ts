@@ -2,7 +2,9 @@ import { BaseRule } from "@/base-rule";
 import { Item } from "../types";
 
 export class QualityRangeRule extends BaseRule {
-  constructor(private exceptions: string[]) {super()}
+  constructor(private exceptions: string[]) {
+    super();
+  }
 
   condition(item: Item) {
     return (

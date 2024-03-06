@@ -3,7 +3,7 @@ import { Item, Rule } from "../types";
 
 export class OrRule extends BaseRule {
   constructor(private rules: Rule[]) {
-    super()
+    super();
   }
 
   action(item: Item) {

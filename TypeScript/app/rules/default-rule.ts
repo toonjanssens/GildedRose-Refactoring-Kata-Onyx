@@ -6,7 +6,7 @@ export class DefaultRule extends BaseRule {
     private amounts: { sellIn?: number; quality?: number },
     private names?: string[]
   ) {
-    super()
+    super();
   }
 
   condition(item: Item) {
