@@ -55,9 +55,3 @@ There are instructions in the [TextTest Readme](../texttests/README.md) for sett
     interpreter:python
 
 
-## Rules
-
-Rules can be configured and passed to the `createRuleApplicator`. All rules are executed in the order they are configured. 
-Use the `OrRule` to create a rule that only executes the first rule that matches the condition.
-
-More info on [creating a custom rule](./app/rules/rules.md)
