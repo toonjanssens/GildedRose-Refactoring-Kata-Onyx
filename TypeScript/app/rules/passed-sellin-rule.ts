@@ -7,7 +7,7 @@ export class PastSellingRule extends BaseRule {
   }
 
   action(item: Item) {
-    item.quality = item.quality - 1;
+    item.quality--;
 
     return item;
   }
